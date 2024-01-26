@@ -1,6 +1,9 @@
 ---
 author: Steve McDougall
+date: MMMM dd
+theme: theme.json
 ---
+
 # Leveraging API Platform
 ## A Laravel Developers Guide
 
