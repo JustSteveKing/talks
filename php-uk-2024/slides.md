@@ -59,6 +59,15 @@ theme: theme.json
 ---
 
 - PHP Framework for building APIs
+
+---
+
+- PHP Framework for building APIs
+- Plugs into Doctrine with zero hassle.
+
+---
+
+- PHP Framework for building APIs
 - Plugs into Doctrine with zero hassle.
 - Focus on HTTP Resources instead of ORM Entities or Models.
 
@@ -72,6 +81,10 @@ I am a _pretty good_ Laravel Developer
 
 ---
 
+I am a _pretty good_ Laravel Developer 😏
+
+---
+
 but
 
 ---
@@ -81,6 +94,10 @@ but
 ---
 
 Let me explain ...
+
+---
+
+## We start with
 
 ---
 
@@ -100,7 +117,11 @@ laravel new project --git --pest
 
 ---
 
-## But, we have to do this ...
+## But ...
+
+---
+
+## But, we have all seen this initial commit ...
 
 ```git
 Changes to be commited:
@@ -108,14 +129,23 @@ Changes to be commited:
     deleted: package.json
     deleted: resources/js/app.js
     deleted: resources/js/bootstrap.js
-    renamed: resources/css/app.css -> resources/views/.gitkeep
-    deleted: resources/views/welcome.blade.php
+    deleted: resources/css/app.css
+    deleted: resources/views/welcome.blade.php 
     deleted: vite.config.js
 ```
+---
+
+(┛ಠ_ಠ)┛彡┻━┻
 
 ---
 
-## Then comes the packages ....
+## The ecosystem is rich though!
+
+---
+
+```bash
+composer require spatie/laravel-permissions
+```
 
 ---
 
@@ -126,12 +156,25 @@ composer require spatie/laravel-query-builder
 ---
 
 ```bash
-composer require timacdonald/json-api
+composer require spatie/laravel-data
+```
+
+
+---
+
+## I mean, we might as well ...
+
+---
+
+## I mean, we might as well ...
+
+```bash
+composer require spatie/*
 ```
 
 ---
 
-## Not forgetting authentication of course!
+## Not forgetting the first party packages
 
 ---
 
@@ -143,6 +186,24 @@ composer require laravel/sanctum
 
 ```bash
 composer require laravel/passport
+```
+
+---
+
+```bash
+composer require laravel/breeze
+```
+
+---
+
+```bash
+composer require laravel/pennant
+```
+
+---
+
+```bash
+composer require laravel/horizon
 ```
 
 ---
@@ -160,6 +221,51 @@ composer require laravel/passport
 ---
 
 ## Return reasonable Responses ....
+
+---
+
+## I'm not talking about this
+
+```php
+return Greeting::all();
+```
+
+---
+
+## Or this
+
+```php
+
+return response()->json(Greeting::all())
+```
+
+---
+
+## I am talking about this
+
+---
+
+```php
+final readonly class CollectionResponse implements Responsable
+{
+  // constructor here
+  public function toResponse(): JsonResponse
+  {
+    return new JsonResponse(
+      data: $this->data,
+      status: $this->status->value,
+    );
+  }
+}
+```
+
+---
+
+# Yes **FINAL** and **READONLY** 😎
+
+---
+
+## Go big or go home...
 
 ---
 
@@ -209,7 +315,15 @@ php artisan make:model Greeting -mf
 
 ---
 
-## So, we have CRUD on one Model/Entity....
+## And ...
+
+---
+
+## We have full CRUD on **one** resource.
+
+---
+
+## Webby
 
 ---
 
@@ -225,13 +339,42 @@ php artisan make:model Greeting -mf
 
 ---
 
-## and we have automatic CRUD endpoints already!
+## and
+
+---
+
+## That's it
+
+---
+
+## we have automatic CRUD endpoints already!
 
 ---
 
 ## Let's let that sink in for a moment ....
 
 ---
+
+## Maybe a moment longer
+
+---
+
+## When I first experienced this
+
+---
+
+# I
+
+---
+
+# I was
+
+---
+
+# I was Speachless
+
+---
+
 
 ## We went from this
 
@@ -240,8 +383,59 @@ php artisan make:model Greeting -mf
 ## We went from this
 
 - Generate Model, Migration, and Factory
+
+---
+
+## We went from this
+
+- Generate Model, Migration, and Factory
 - Customize our Database Migration
-- Configure the Eloquent Mode
+
+---
+
+## We went from this
+
+- Generate Model, Migration, and Factory
+- Customize our Database Migration
+- Configure the Eloquent Model
+
+---
+
+## We went from this
+
+- Generate Model, Migration, and Factory
+- Customize our Database Migration
+- Configure the Eloquent Model
+- Register Routes for the new Model
+
+---
+
+## We went from this
+
+- Generate Model, Migration, and Factory
+- Customize our Database Migration
+- Configure the Eloquent Model
+- Register Routes for the new Model
+- Create and add logic to all required Controllers
+
+---
+
+## We went from this
+
+- Generate Model, Migration, and Factory
+- Customize our Database Migration
+- Configure the Eloquent Model
+- Register Routes for the new Model
+- Create and add logic to all required Controllers
+- Create our API Resources to return
+
+---
+
+## We went from this
+
+- Generate Model, Migration, and Factory
+- Customize our Database Migration
+- Configure the Eloquent Model
 - Register Routes for the new Model
 - Create and add logic to all required Controllers
 - Create our API Resources to return
@@ -256,7 +450,20 @@ php artisan make:model Greeting -mf
 ## To this
 
 - Create Resource class
-- Add Entity attribute
+
+---
+
+## To this
+
+- Create Resource class
+- Add Entity attributes
+
+---
+
+## To this
+
+- Create Resource class
+- Add Entity attributes
 - Add relevent properties
 
 ---
@@ -282,6 +489,24 @@ php artisan make:model Greeting -mf
 ---
 
 ## Easy right?
+
+---
+
+## All in one place too!
+
+---
+
+< yay >
+ -----
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+---
+
+## So,
 
 ---
 
@@ -366,4 +591,159 @@ class Greeting
 
 ---
 
+## One uses properties
 
+---
+
+## The other uses attributes
+
+---
+
+## A question I get asked _all the time_
+
+---
+
+## When would I use Laravel?
+
+---
+
+- Full-Stack applications
+
+---
+
+- Full-Stack applications
+- Application where I have a frontend and an API
+
+---
+
+- Full-Stack applications
+- Application where I have a frontend and an API
+- When I don't know if I need an API yet.
+
+---
+
+## Laravel is a FULL-STACK framework first
+
+---
+
+## This is by design
+
+---
+
+## This is by design, and decision
+
+---
+
+## API Platform
+
+---
+
+## API Platform, as the name suggests
+
+---
+
+## API Platform, as the name suggests is designed for APIs
+
+---
+
+## So, when building an API.
+
+---
+
+## So, when building an API. Try it.
+
+---
+
+< Try API Platform >
+ ------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+---
+
+- There is no requirement to know Symfony
+
+---
+
+- There is no requirement to know Symfony
+- You can just use PHP with annotations, ignore the rest
+
+---
+
+- There is no requirement to know Symfony.
+- You can just use PHP with annotations, ignore the rest.
+- Content Negotiation is configurable.
+
+---
+
+- There is no requirement to know Symfony.
+- You can just use PHP with annotations, ignore the rest.
+- Content Negotiation is configurable.
+- The community is a lot more approachable than you have been lead to believe.
+
+---
+
+< give your API super-powers >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+---
+
+< Use API-Platform for your next API >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+---
+
+# Thanks for listening
+
+---
+
+# Thanks for listening
+
+- GitHub: JustSteveKing
+
+---
+
+# Thanks for listening
+
+- GitHub: JustSteveKing
+- Twitter: JustSteveKing
+
+---
+
+# Thanks for listening
+
+- GitHub: JustSteveKing
+- Twitter: JustSteveKing
+- Mastodon: JustSteveKing
+
+---
+
+# Thanks for listening
+
+- GitHub: JustSteveKing
+- Twitter: JustSteveKing
+- Mastodon: JustSteveKing
+- Whatever is next: JustSteveKing
+
+---
+
+< Any Questions >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
