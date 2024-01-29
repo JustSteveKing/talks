@@ -5,6 +5,7 @@ theme: theme.json
 ---
 
 # Leveraging API Platform
+
 ## A Laravel Developers Guide
 
 ---
@@ -26,6 +27,18 @@ theme: theme.json
 ---
 
 ## I live in Wales
+
+---
+
+## I like to take a selfie anytime I do a talk ...
+
+---
+
+## Say Cheese!
+
+---
+
+📸
 
 ---
 
@@ -55,7 +68,7 @@ I am a Laravel Developer
 
 ---
 
-I am a pretty good Laravel Developer
+I am a _pretty good_ Laravel Developer
 
 ---
 
@@ -349,4 +362,8 @@ class Greeting
 
 ---
 
-## Like for like they are both relatively simple
+## Like for like, they are both relatively simple
+
+---
+
+
