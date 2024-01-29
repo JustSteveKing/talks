@@ -603,18 +603,24 @@ class Greeting
 
 ---
 
-## When would I use Laravel?
+> When would I use Laravel?
 
 ---
+
+> When would I use Laravel?
 
 - Full-Stack applications
 
 ---
+
+> When would I use Laravel?
 
 - Full-Stack applications
 - Application where I have a frontend and an API
 
 ---
+
+> When would I use Laravel?
 
 - Full-Stack applications
 - Application where I have a frontend and an API
@@ -642,7 +648,102 @@ class Greeting
 
 ---
 
+## API Platform, as the name suggests is designed
+
+---
+
+## API Platform, as the name suggests is designed for
+
+---
+
 ## API Platform, as the name suggests is designed for APIs
+
+---
+
+## Adding Auth in Laravel is just a package
+
+---
+
+## Adding Auth in Laravel is just a package
+
+```bash
+composer require laravel/passport
+```
+
+---
+
+## Adding Auth in Laravel is just a package
+
+```bash
+composer require laravel/passport
+php artisan migrate
+```
+
+---
+
+## Adding Auth in Laravel is just a package
+
+```bash
+composer require laravel/passport
+php artisan migrate
+php artisan passport:install --uuids
+```
+
+---
+
+## How about API Platform?
+
+---
+
+## How about API Platform?
+
+```bash
+composer require symfony/security-bundle
+```
+
+---
+
+## How about API Platform?
+
+```bash
+composer require symfony/security-bundle
+```
+
+Then we configure it how we want to use it.
+
+---
+
+## But, in Laravel we have Jobs!
+
+```bash
+php artisan make:job GreetUser
+```
+
+---
+
+## I see your job, and raise you Async messaging
+
+---
+
+## All you have to do is tell your Resource to use messaging!
+
+---
+
+```php
+#[ApiResource(operations: [
+  new Get(controller: NotFoundAction::class, read: false, status: 404),
+  new Post(messenger: true, output: false, status: 202),
+])]
+#[ORM\Entity]
+class Greeting
+{
+  // properties and set up here ...
+}
+```
+
+---
+
+## API Platform gives you all the tools you could possibly need
 
 ---
 
